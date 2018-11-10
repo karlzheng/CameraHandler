@@ -1,9 +1,10 @@
 package com.multimedia.v01.commands;
 
 /*
- * panSpeed values from 1 to 18
- * tiltSpeed values from 1 to 14
- *
+ * panSpeed: values from 1 to 18
+ * tiltSpeed: values from 1 to 14
+ * panPosition: values from 0 to 100
+ * tiltPosition: values from 0 to 100
  */
 
 public class TiltCommand extends GeneralCommand {
