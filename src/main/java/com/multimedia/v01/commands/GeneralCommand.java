@@ -1,7 +1,5 @@
 package com.multimedia.v01.commands;
 
-import java.util.Arrays;
-
 public class GeneralCommand {
 
     Command createCommand(int[] data) {
@@ -35,11 +33,4 @@ public class GeneralCommand {
         return value >= minValue && value <= maxValue;
     }
 
-    protected int joinDigits(int... digits){
-        StringBuilder sb = new StringBuilder(digits.length);
-        for (int digit : digits) {
-            sb.append(digit);
-        }
-        return Integer.valueOf(sb.toString());
-    }
 }

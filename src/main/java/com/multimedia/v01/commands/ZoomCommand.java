@@ -1,5 +1,10 @@
 package com.multimedia.v01.commands;
 
+/*
+ * zoomSpeed: values from 2 to 7
+ * zoomData: values from 0 to 100
+ */
+
 public class ZoomCommand extends GeneralCommand {
 
     private final static int MIN_ZOOM = 0;
@@ -22,17 +27,20 @@ public class ZoomCommand extends GeneralCommand {
         if(!scopeValidation(zoomSpeed, 2, 7)){
             throw new IllegalArgumentException();
         }
-        return createCommand(new int[]{1, 4, 7, joinDigits(2, zoomSpeed)});
+        return createCommand(new int[]{1, 4, 7, 32 + zoomSpeed});
     }
 
     public Command wide(int zoomSpeed){
         if(!scopeValidation(zoomSpeed, 2, 7)){
             throw new IllegalArgumentException();
         }
-        return createCommand(new int[]{1, 4, 7, joinDigits(3, zoomSpeed)});
+        return createCommand(new int[]{1, 4, 7, 48 + zoomSpeed});
     }
 
     public Command direct(int zoomData){
+        if(!scopeValidation(zoomData, 0, 100)){
+            throw new IllegalArgumentException();
+        }
         int[] focusBytes = positionDecToHexBytes(zoomData, MIN_ZOOM, MAX_ZOOM);
         return createCommand(new int[]{1, 4, 47, focusBytes[3], focusBytes[2], focusBytes[1], focusBytes[0]});
     }
