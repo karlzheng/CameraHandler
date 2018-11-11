@@ -1,5 +1,7 @@
 package com.multimedia.v01.commands;
 
+import java.util.Arrays;
+
 public class GeneralCommand {
 
     Command createCommand(int[] data) {
@@ -17,5 +19,23 @@ public class GeneralCommand {
         }
 
         return data;
+    }
+
+    protected int[] positionDecToHexBytes(int positionPercent, int min, int max) {
+        int positionValue = (max - min) * positionPercent / 100 + min;
+        int[] positionBytes = new int[4];
+        for (int i = 0; i < positionBytes.length; i++) {
+            positionBytes[0] = (positionValue % 16) * 16;
+            positionValue /= 16;
+        }
+        return positionBytes;
+    }
+
+    protected int joinDigits(int... digits){
+        StringBuilder sb = new StringBuilder(digits.length);
+        for (int digit : digits) {
+            sb.append(digit);
+        }
+        return Integer.valueOf(sb.toString());
     }
 }

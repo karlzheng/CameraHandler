@@ -76,13 +76,5 @@ public class TiltCommand extends GeneralCommand {
         return createCommand(new int[] {1, 6, 5});
     }
 
-    private int[] positionDecToHexBytes(int positionPercent, int min, int max) {
-        int positionValue = (max - min) * positionPercent / 100 + min;
-        int[] positionBytes = new int[4];
-        for (int i = 0; i < positionBytes.length; i++) {
-            positionBytes[0] = (positionValue % 16) * 16;
-            positionValue /= 16;
-        }
-        return positionBytes;
-    }
+
 }
