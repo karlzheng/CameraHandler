@@ -31,6 +31,10 @@ public class GeneralCommand {
         return positionBytes;
     }
 
+    protected boolean scopeValidation(int value, int minValue, int maxValue){
+        return value >= minValue && value <= maxValue;
+    }
+
     protected int joinDigits(int... digits){
         StringBuilder sb = new StringBuilder(digits.length);
         for (int digit : digits) {

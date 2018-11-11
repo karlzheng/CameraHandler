@@ -19,10 +19,16 @@ public class ZoomCommand extends GeneralCommand {
     }
 
     public Command tele(int zoomSpeed){
+        if(!scopeValidation(zoomSpeed, 2, 7)){
+            throw new IllegalArgumentException();
+        }
         return createCommand(new int[]{1, 4, 7, joinDigits(2, zoomSpeed)});
     }
 
     public Command wide(int zoomSpeed){
+        if(!scopeValidation(zoomSpeed, 2, 7)){
+            throw new IllegalArgumentException();
+        }
         return createCommand(new int[]{1, 4, 7, joinDigits(3, zoomSpeed)});
     }
 
