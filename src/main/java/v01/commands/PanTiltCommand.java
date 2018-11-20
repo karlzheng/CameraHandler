@@ -99,21 +99,13 @@ public class PanTiltCommand extends GeneralCommand {
     }
 
     private void validatePanAndTiltSpeed(int panSpeed, int tiltSpeed) {
-        if(!scopeValidation(panSpeed, 1, 18)){
-            throw new IllegalArgumentException();
-        }
-        if(!scopeValidation(tiltSpeed, 1, 14)){
-            throw new IllegalArgumentException();
-        }
+        scopeValidation(panSpeed, 1, 18);
+        scopeValidation(tiltSpeed, 1, 14);
     }
 
     private void validatePanAndTiltPosition(int panPosition, int tiltPosition) {
-        if(!scopeValidation(panPosition, 0, 100)){
-            throw new IllegalArgumentException();
-        }
-        if(!scopeValidation(tiltPosition, 0, 100)){
-            throw new IllegalArgumentException();
-        }
+        scopeValidation(panPosition, 0, 100);
+        scopeValidation(tiltPosition, 0, 100);
     }
 
 }

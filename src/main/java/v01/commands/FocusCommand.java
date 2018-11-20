@@ -38,9 +38,7 @@ public class FocusCommand extends GeneralCommand {
     }
 
     public Command direct(int focusData){
-        if(!scopeValidation(focusData, 0, 100)){
-            throw new IllegalArgumentException();
-        }
+        scopeValidation(focusData, 0, 100);
         int[] focusBytes = positionDecToHexBytes(focusData, MIN_FOCUS, MAX_FOCUS);
         return createCommand(new int[]{1, 4, 72, focusBytes[3], focusBytes[2], focusBytes[1], focusBytes[0]});
     }

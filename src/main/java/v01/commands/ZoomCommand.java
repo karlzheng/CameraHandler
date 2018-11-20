@@ -24,23 +24,17 @@ public class ZoomCommand extends GeneralCommand {
     }
 
     public Command tele(int zoomSpeed){
-        if(!scopeValidation(zoomSpeed, 2, 7)){
-            throw new IllegalArgumentException();
-        }
+        scopeValidation(zoomSpeed, 2, 7);
         return createCommand(new int[]{1, 4, 7, 32 + zoomSpeed});
     }
 
     public Command wide(int zoomSpeed){
-        if(!scopeValidation(zoomSpeed, 2, 7)){
-            throw new IllegalArgumentException();
-        }
+        scopeValidation(zoomSpeed, 2, 7);
         return createCommand(new int[]{1, 4, 7, 48 + zoomSpeed});
     }
 
     public Command direct(int zoomData){
-        if(!scopeValidation(zoomData, 0, 100)){
-            throw new IllegalArgumentException();
-        }
+        scopeValidation(zoomData, 0, 100);
         int[] focusBytes = positionDecToHexBytes(zoomData, MIN_ZOOM, MAX_ZOOM);
         return createCommand(new int[]{1, 4, 47, focusBytes[3], focusBytes[2], focusBytes[1], focusBytes[0]});
     }

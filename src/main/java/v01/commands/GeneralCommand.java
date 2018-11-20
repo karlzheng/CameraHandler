@@ -29,8 +29,9 @@ public class GeneralCommand {
         return positionBytes;
     }
 
-    protected boolean scopeValidation(int value, int minValue, int maxValue){
-        return value >= minValue && value <= maxValue;
+    protected void scopeValidation(int value, int minValue, int maxValue){
+        if (value > maxValue || value < minValue)
+            throw new IllegalArgumentException();
     }
 
 }
