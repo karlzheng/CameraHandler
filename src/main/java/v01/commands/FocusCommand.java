@@ -1,6 +1,9 @@
 package v01.commands;
 
-/*
+/**
+ * Focus control.
+ * When adjust the focus, change the mode to Manual the send Far/Near or Direct command.
+ *
  * focusData: values from 0 to 100
  */
 

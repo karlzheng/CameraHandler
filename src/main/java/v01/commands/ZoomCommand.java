@@ -1,6 +1,6 @@
 package v01.commands;
 
-/*
+/**
  * zoomSpeed: values from 2 to 7
  * zoomData: values from 0 to 100
  */

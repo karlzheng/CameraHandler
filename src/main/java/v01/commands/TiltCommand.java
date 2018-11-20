@@ -1,6 +1,6 @@
 package v01.commands;
 
-/*
+/**
  * panSpeed: values from 1 to 18
  * tiltSpeed: values from 1 to 14
  * panPosition: values from 0 to 100
@@ -59,6 +59,9 @@ public class TiltCommand extends GeneralCommand {
         return createCommand(new int[] {1, 6, 1, panSpeed, tiltSpeed, 3, 3});
     }
 
+    /**
+     * Absolute Position Drive
+     */
     public Command absolutePosition(int panSpeed, int tiltSpeed, int panPosition, int tiltPosition) {
         validatePanAndTiltSpeed(panSpeed, tiltSpeed);
         validatePanAndTiltPosition(panPosition, tiltPosition);
@@ -70,6 +73,9 @@ public class TiltCommand extends GeneralCommand {
                 tiltBytes[3], tiltBytes[2], tiltBytes[1], tiltBytes[0]});
     }
 
+    /**
+     * Relative Position Drive. Set the relative coordinates between current position to the the target position.
+     */
     public Command relativePosition(int panSpeed, int tiltSpeed, int panPosition, int tiltPosition) {
         validatePanAndTiltSpeed(panSpeed, tiltSpeed);
         validatePanAndTiltPosition(panPosition, tiltPosition);
@@ -85,6 +91,9 @@ public class TiltCommand extends GeneralCommand {
         return createCommand(new int[] {1, 6, 4});
     }
 
+    /**
+     * Pan/Tilt Initialize command
+     */
     public Command reset() {
         return createCommand(new int[] {1, 6, 5});
     }
