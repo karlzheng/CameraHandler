@@ -7,7 +7,7 @@ package v01.commands;
  * tiltPosition: values from 0 to 100
  */
 
-public class TiltCommand extends GeneralCommand {
+public class PanTiltCommand extends GeneralCommand {
 
     private final int PAN_MIN = 880;
     private final int PAN_MAX = 64656;
