@@ -51,22 +51,127 @@
             </div>
         </div>
         <div class="backlight-commands">
-
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera backlight:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/backlightOn'">backlightOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/backlightOff'">backlightOff</button>
+            </div>
         </div>
         <div class="memory-commands">
-
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera memory:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/memoryReset'">memoryReset</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/memorySet'">memorySet</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/memoryRecall'">memoryRecall</button>
+            </div>
         </div>
         <div class="keyLock-commands">
-
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera keyLock:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/keyLockOn'">keyLockOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/keyLockOff'">keyLockOff</button>
+            </div>
         </div>
         <div class="irReceive-commands">
-
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera IRReceive:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/irReceiveOn'">irReceiveOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/irReceiveOff'">irReceiveOff</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/irReceiveOnOff'">irReceiveOnOff</button>
+            </div>
         </div>
         <div class="irReceiveReturn-commands">
-
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera IRReceiveReturn:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/irReceiveReturnOn'">irReceiveReturnOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/irReceiveReturnOff'">irReceiveReturnOff</button>
+            </div>
         </div>
         <div class="panTilt-commands">
-
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera PanTilt:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltHome'">panTiltHome</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltUp'">panTiltUp</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltDown'">panTiltDown</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltLeft'">panTiltLeft</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltRight'">panTiltRight</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltUpLeft'">panTiltUpLeft</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltUpRight'">panTiltUpRight</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltDownLeft'">panTiltDownLeft</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltDownRight'">panTiltDownRight</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltStop'">panTiltStop</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltAbsolutePosition'">panTiltAbsolutePosition</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltRelativePosition'">panTiltRelativePosition</button>
+            </div>
+        </div>
+        <div class="panTiltLimitSet-commands">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera PanTiltLimitSet:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltlimitSet'">panTiltlimitSet</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/panTiltlimitClear'">panTiltlimitClear</button>
+            </div>
+        </div>
+        <div class="dataScreen-commands">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera DataScreen:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/dataScreenOn'">dataScreenOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/dataScreenOff'">dataScreenOff</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/dataScreenOnOff'">dataScreenOnOff</button>
+            </div>
+        </div>
+        <div class="atMode-commands">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera ATMode:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atModeOn'">atModeOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atModeOff'">atModeOff</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atModeOnOff'">atModeOnOff</button>
+            </div>
+        </div>
+        <div class="atAEMode-commands">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera ATAEMode:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atAEOn'">atAEOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atAEOff'">atAEOff</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atAEOnOff'">atAEOnOff</button>
+            </div>
+        </div>
+        <div class="atAutoZoom-commands">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera ATAutoZoom:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atAutoZoomOn'">atAutoZoomOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atAutoZoomOff'">atAutoZoomOff</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atAutoZoomOnOff'">atAutoZoomOnOff</button>
+            </div>
+        </div>
+        <div class="atMDFrameDisplay-commands">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera atMDFrameDisplay:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atMDFrameDisplayOn'">atMDFrameDisplayOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atMDFrameDisplayOff'">atMDFrameDisplayOff</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atMDFrameDisplayOnOff'">atMDFrameDisplayOnOff</button>
+            </div>
+        </div>
+        <div class="atOffset-commands">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera atOffset:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atOffsetOn'">atOffsetOn</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atOffsetOff'">atOffsetOff</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atOffsetOnOff'">atOffsetOnOff</button>
+            </div>
+        </div>
+        <div class="atMDStartStop-commands">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera atMDStartStop:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/atMDStartStop'">atMDStartStop</button>
+            </div>
+        </div>
+        <div class="misc-commands">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary" disabled style="width: 200px">Camera misc:</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/miscAddressSet'">miscAddressSet</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/miscIFClear'">miscIFClear</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/miscCommandCancel'">miscCommandCancel</button>
+            </div>
         </div>
     </div>
 
