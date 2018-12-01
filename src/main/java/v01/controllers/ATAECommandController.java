@@ -9,7 +9,7 @@ public class ATAECommandController {
     @RequestMapping(value = "/atAEOn")
     public String atAEOn(){
 
-        return "redirect:/?command=ATAEOn";
+        return "redirect:/?command=atAEOn";
     }
 
     @RequestMapping(value = "/atAEOff")

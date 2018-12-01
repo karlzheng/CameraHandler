@@ -2,6 +2,7 @@ package v01.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PanTiltCommandController {
@@ -13,67 +14,67 @@ public class PanTiltCommandController {
     }
 
     @RequestMapping(value = "/panTiltUp")
-    public String panTiltUp(int panSpeed, int tiltSpeed){
+    public String panTiltUp(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
 
         return "redirect:/?command=panTiltUp";
     }
 
     @RequestMapping(value = "/panTiltDown")
-    public String panTiltDown(int panSpeed, int tiltSpeed){
+    public String panTiltDown(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
 
         return "redirect:/?command=panTiltDown";
     }
 
     @RequestMapping(value = "/panTiltLeft")
-    public String panTiltLeft(int panSpeed, int tiltSpeed){
+    public String panTiltLeft(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
 
         return "redirect:/?command=panTiltLeft";
     }
 
     @RequestMapping(value = "/panTiltRight")
-    public String panTiltRight(int panSpeed, int tiltSpeed){
+    public String panTiltRight(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
 
         return "redirect:/?command=panTiltRight";
     }
 
     @RequestMapping(value = "/panTiltUpLeft")
-    public String panTiltUpLeft(int panSpeed, int tiltSpeed){
+    public String panTiltUpLeft(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
 
         return "redirect:/?command=panTiltUpLeft";
     }
 
     @RequestMapping(value = "/panTiltUpRight")
-    public String panTiltUpRight(int panSpeed, int tiltSpeed){
+    public String panTiltUpRight(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
 
         return "redirect:/?command=panTiltUpRight";
     }
 
     @RequestMapping(value = "/panTiltDownLeft")
-    public String panTiltDownLeft(int panSpeed, int tiltSpeed){
+    public String panTiltDownLeft(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
 
         return "redirect:/?command=panTiltDownLeft";
     }
 
     @RequestMapping(value = "/panTiltDownRight")
-    public String panTiltDownRight(int panSpeed, int tiltSpeed){
+    public String panTiltDownRight(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
 
         return "redirect:/?command=panTiltDownRight";
     }
 
     @RequestMapping(value = "/panTiltStop")
-    public String panTiltStop(int panSpeed, int tiltSpeed){
+    public String panTiltStop(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
 
         return "redirect:/?command=panTiltStop";
     }
 
     @RequestMapping(value = "/panTiltAbsolutePosition")
-    public String panTiltAbsolutePosition(int panSpeed, int tiltSpeed, int panPosition, int tiltPosition){
+    public String panTiltAbsolutePosition(@RequestParam int panSpeed, @RequestParam int tiltSpeed, @RequestParam int panPosition, @RequestParam int tiltPosition){
 
         return "redirect:/?command=panTiltAbsolutePosition";
     }
 
     @RequestMapping(value = "/panTiltRelativePosition")
-    public String panTiltRelativePosition(int panSpeed, int tiltSpeed, int panPosition, int tiltPosition){
+    public String panTiltRelativePosition(@RequestParam int panSpeed, @RequestParam int tiltSpeed, @RequestParam int panPosition, @RequestParam int tiltPosition){
 
         return "redirect:/?command=panTiltRelativePosition";
     }

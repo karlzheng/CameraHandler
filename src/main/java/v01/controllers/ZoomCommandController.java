@@ -26,19 +26,22 @@ public class ZoomCommandController {
     }
 
     @RequestMapping(value = "/zoomTeleWithSpeed")
-    public String zoomTele(int speed){
+    public String zoomTele(@RequestParam int zoomSpeed){
+        System.out.println(zoomSpeed);
 
         return "redirect:/?command=zoomTeleWithSpeed";
     }
 
     @RequestMapping(value = "/zoomWideWithSpeed")
-    public String zoomWide(int speed){
+    public String zoomWide(@RequestParam int zoomSpeed){
+        System.out.println(zoomSpeed);
 
         return "redirect:/?command=zoomWideWithSpeed";
     }
 
     @RequestMapping(value = "/zoomDirect")
-    public String zoomDirect(int data){
+    public String zoomDirect(@RequestParam int zoomData){
+        System.out.println(zoomData);
 
         return "redirect:/?command=zoomDirect";
     }

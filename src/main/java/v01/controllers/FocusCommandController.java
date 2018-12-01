@@ -2,6 +2,7 @@ package v01.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class FocusCommandController {
@@ -43,7 +44,7 @@ public class FocusCommandController {
     }
 
     @RequestMapping(value = "/directFocus")
-    public String directFocus(int focusData){
+    public String directFocus(@RequestParam int focusData){
 
         return "redirect:/?command=directFocus";
     }

@@ -2,6 +2,7 @@ package v01.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MiscCommandController {
@@ -19,7 +20,7 @@ public class MiscCommandController {
     }
 
     @RequestMapping(value = "/miscCommandCancel")
-    public String miscCommandCancel(int socketNumber){
+    public String miscCommandCancel(@RequestParam int socketNumber){
 
         return "redirect:/?command=miscCommandCancel";
     }
