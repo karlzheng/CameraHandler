@@ -6,6 +6,7 @@
         <jsp:include page="commands/zoomCommand.jsp"></jsp:include>
         <jsp:include page="commands/focusCommand.jsp"></jsp:include>
         <jsp:include page="commands/backlightCommand.jsp"></jsp:include>
+        <jsp:include page="commands/brightCommand.jsp"></jsp:include>
         <jsp:include page="commands/memoryCommand.jsp"></jsp:include>
         <jsp:include page="commands/keyLockCommand.jsp"></jsp:include>
         <jsp:include page="commands/irReceiveCommand.jsp"></jsp:include>

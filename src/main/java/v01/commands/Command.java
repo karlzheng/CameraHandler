@@ -8,9 +8,7 @@ public class Command {
         this.data = data;
     }
 
-
     public void execute() {
         // do sth with data
     }
-
 }
