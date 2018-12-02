@@ -18,7 +18,7 @@
             <div class="modal-body">
                 <form action="/zoomTeleWithSpeed">
                     <ul style="list-style-type:none">
-                        <li>Zoom speed: <input type="text" name="zoomSpeed"></li> <!-- validation for int input-->
+                        <li>Zoom speed: <input type="number" name="zoomSpeed" min="2" max="7" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -37,7 +37,7 @@
             <div class="modal-body">
                 <form action="/zoomWideWithSpeed">
                     <ul style="list-style-type:none">
-                        <li>Zoom speed: <input type="text" name="zoomSpeed"></li> <!-- validation for int input-->
+                        <li>Zoom speed: <input type="number" name="zoomSpeed" min="2" max="7" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -56,7 +56,7 @@
             <div class="modal-body">
                 <form action="/zoomDirect">
                     <ul style="list-style-type:none">
-                        <li>Zoom data: <input type="text" name="zoomData"></li> <!-- validation for int input-->
+                        <li>Zoom data: <input type="number" name="zoomData" min="0" max="100" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">

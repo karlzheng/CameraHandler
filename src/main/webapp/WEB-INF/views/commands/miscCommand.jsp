@@ -14,7 +14,7 @@
             <div class="modal-body">
                 <form action="/miscCommandCancel">
                     <ul style="list-style-type:none">
-                        <li>Socket number: <input type="text" name="socketNumber"></li> <!-- validation for int input-->
+                        <li>Socket number: <input type="number" name="socketNumber" min="0" max="1" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">

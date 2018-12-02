@@ -18,7 +18,7 @@
             <div class="modal-body">
                 <form action="/directFocus">
                     <ul style="list-style-type:none">
-                        <li>Focus data: <input type="text" name="focusData"></li> <!-- validation for int input-->
+                        <li>Focus data: <input type="number" name="focusData" min="0" max="100" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">

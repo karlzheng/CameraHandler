@@ -23,8 +23,8 @@
             <div class="modal-body">
                 <form action="/panTiltUp">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -43,8 +43,8 @@
             <div class="modal-body">
                 <form action="/panTiltDown">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -63,8 +63,8 @@
             <div class="modal-body">
                 <form action="/panTiltLeft">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -83,8 +83,8 @@
             <div class="modal-body">
                 <form action="/panTiltRight">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -103,8 +103,8 @@
             <div class="modal-body">
                 <form action="/panTiltUpLeft">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -123,8 +123,8 @@
             <div class="modal-body">
                 <form action="/panTiltUpRight">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -143,8 +143,8 @@
             <div class="modal-body">
                 <form action="/panTiltDownLeft">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -163,8 +163,8 @@
             <div class="modal-body">
                 <form action="/panTiltDownRight">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -183,8 +183,8 @@
             <div class="modal-body">
                 <form action="/panTiltStop">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -203,10 +203,10 @@
             <div class="modal-body">
                 <form action="/panTiltAbsolutePosition">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
-                        <li>Pan position: <input type="text" name="panPosition"></li> <!-- validation for int input-->
-                        <li>Tilt position: <input type="text" name="tiltPosition"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
+                        <li>Pan position: <input type="number" name="panPosition" min="0" max="100" required></li> <!-- validation for int input-->
+                        <li>Tilt position: <input type="number" name="tiltPosition" min="0" max="100" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -225,10 +225,10 @@
             <div class="modal-body">
                 <form action="/panTiltRelativePosition">
                     <ul style="list-style-type:none">
-                        <li>Pan speed: <input type="text" name="panSpeed"></li> <!-- validation for int input-->
-                        <li>Tilt speed: <input type="text" name="tiltSpeed"></li> <!-- validation for int input-->
-                        <li>Pan position: <input type="text" name="panPosition"></li> <!-- validation for int input-->
-                        <li>Tilt position: <input type="text" name="tiltPosition"></li> <!-- validation for int input-->
+                        <li>Pan speed: <input type="number" name="panSpeed" min="1" max="18" required></li> <!-- validation for int input-->
+                        <li>Tilt speed: <input type="number" name="tiltSpeed" min="1" max="14" required></li> <!-- validation for int input-->
+                        <li>Pan position: <input type="number" name="panPosition" min="0" max="100" required></li> <!-- validation for int input-->
+                        <li>Tilt position: <input type="number" name="tiltPosition" min="0" max="100" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">

@@ -13,9 +13,9 @@
             <div class="modal-body">
                 <form action="/panTiltlimitSet">
                     <ul style="list-style-type:none">
-                        <li>Corner: <input type="text" name="corner"></li> <!-- validation for int input-->
-                        <li>Pan position: <input type="text" name="panPosition"></li> <!-- validation for int input-->
-                        <li>Tilt position: <input type="text" name="tiltPosition"></li> <!-- validation for int input-->
+                        <li>Corner: <input type="number" name="corner" min="0" max="1" required></li> <!-- validation for int input-->
+                        <li>Pan position: <input type="number" name="panPosition" min="0" max="100" required></li> <!-- validation for int input-->
+                        <li>Tilt position: <input type="number" name="tiltPosition" min="0" max="100" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -34,7 +34,7 @@
             <div class="modal-body">
                 <form action="/panTiltlimitClear">
                     <ul style="list-style-type:none">
-                        <li>Corner: <input type="text" name="corner"></li> <!-- validation for int input-->
+                        <li>Corner: <input type="number" name="corner" min="0" max="1" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">

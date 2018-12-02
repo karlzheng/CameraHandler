@@ -14,7 +14,7 @@
             <div class="modal-body">
                 <form action="/memoryReset">
                     <ul style="list-style-type:none">
-                        <li>Position number: <input type="text" name="positionNumber"></li> <!-- validation for int input-->
+                        <li>Position number: <input type="number" name="positionNumber" min="0" max="5" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -33,7 +33,7 @@
             <div class="modal-body">
                 <form action="/memorySet">
                     <ul style="list-style-type:none">
-                        <li>Position number: <input type="text" name="positionNumber"></li> <!-- validation for int input-->
+                        <li>Position number: <input type="number" name="positionNumber" min="0" max="5" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
@@ -52,7 +52,7 @@
             <div class="modal-body">
                 <form action="/memoryRecall">
                     <ul style="list-style-type:none">
-                        <li>Position number: <input type="text" name="positionNumber"></li> <!-- validation for int input-->
+                        <li>Position number: <input type="number" name="positionNumber" min="0" max="5" required></li> <!-- validation for int input-->
                         <li>
                             <button data-dismiss="modal">Cancel</button>
                             <input type="submit" value="Do command">
