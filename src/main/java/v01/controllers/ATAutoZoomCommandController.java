@@ -9,21 +9,21 @@ public class ATAutoZoomCommandController {
 
     private ATAutoZoomCommand atAutoZoomCommand = new ATAutoZoomCommand();
 
-    @RequestMapping(value = "/atAutoZoomOn")
+    @RequestMapping(value = "/ATAutoZoom_on")
     public String atAutoZoomOn(){
         atAutoZoomCommand.on().execute();
-        return "redirect:/?command=atAutoZoomOn";
+        return "redirect:/?command=ATAutoZoom_on";
     }
 
-    @RequestMapping(value = "/atAutoZoomOff")
+    @RequestMapping(value = "/ATAutoZoom_off")
     public String atAutoZoomOff(){
         atAutoZoomCommand.off().execute();
-        return "redirect:/?command=atAutoZoomOff";
+        return "redirect:/?command=ATAutoZoom_off";
     }
 
-    @RequestMapping(value = "/atAutoZoomOnOff")
+    @RequestMapping(value = "/ATAutoZoom_onOff")
     public String atAutoZoomOnOff(){
         atAutoZoomCommand.onOff().execute();
-        return "redirect:/?command=atAutoZoomOnOff";
+        return "redirect:/?command=ATAutoZoom_onOff";
     }
 }

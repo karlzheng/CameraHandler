@@ -9,21 +9,21 @@ public class DatascreenCommandController {
 
     private DatascreenCommand datascreenCommand = new DatascreenCommand();
 
-    @RequestMapping(value = "/dataScreenOn")
+    @RequestMapping(value = "/Datascreen_on")
     public String dataScreenOn(){
         datascreenCommand.on().execute();
-        return "redirect:/?command=dataScreenOn";
+        return "redirect:/?command=Datascreen_on";
     }
 
-    @RequestMapping(value = "/dataScreenOff")
+    @RequestMapping(value = "/Datascreen_off")
     public String dataScreenOff(){
         datascreenCommand.off().execute();
-        return "redirect:/?command=dataScreenOff";
+        return "redirect:/?command=Datascreen_off";
     }
 
-    @RequestMapping(value = "/dataScreenOnOff")
+    @RequestMapping(value = "/Datascreen_onOff")
     public String dataScreenOnOff(){
         datascreenCommand.onOff().execute();
-        return "redirect:/?command=dataScreenOnOff";
+        return "redirect:/?command=Datascreen_onOff";
     }
 }

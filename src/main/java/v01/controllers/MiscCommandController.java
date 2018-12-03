@@ -10,21 +10,21 @@ public class MiscCommandController {
 
     private MiscCommand miscCommand = new MiscCommand();
 
-    @RequestMapping(value = "/miscAddressSet")
+    @RequestMapping(value = "/Misc_addressSet")
     public String miscAddressSet(){
         miscCommand.addressSet().execute();
-        return "redirect:/?command=miscAddressSet";
+        return "redirect:/?command=Misc_addressSet";
     }
 
-    @RequestMapping(value = "/miscIFClear")
+    @RequestMapping(value = "/Misc_IFClear")
     public String miscIFClear(){
         miscCommand.IFClear().execute();
-        return "redirect:/?command=miscIFClear";
+        return "redirect:/?command=Misc_IFClear";
     }
 
-    @RequestMapping(value = "/miscCommandCancel")
+    @RequestMapping(value = "/Misc_commandCancel")
     public String miscCommandCancel(@RequestParam int socketNumber){
         miscCommand.commandCancel(socketNumber).execute();
-        return "redirect:/?command=miscCommandCancel";
+        return "redirect:/?command=Misc_commandCancel";
     }
 }

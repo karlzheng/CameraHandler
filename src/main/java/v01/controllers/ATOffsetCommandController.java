@@ -9,21 +9,21 @@ public class ATOffsetCommandController {
 
     private ATOffsetCommand atOffsetCommand = new ATOffsetCommand();
 
-    @RequestMapping(value = "/atOffsetOn")
+    @RequestMapping(value = "/ATOffset_on")
     public String atOffsetOn(){
         atOffsetCommand.on().execute();
-        return "redirect:/?command=atOffsetOn";
+        return "redirect:/?command=ATOffset_on";
     }
 
-    @RequestMapping(value = "/atOffsetOff")
+    @RequestMapping(value = "/ATOffset_off")
     public String atOffsetOff(){
         atOffsetCommand.off().execute();
-        return "redirect:/?command=atOffsetOff";
+        return "redirect:/?command=ATOffset_off";
     }
 
-    @RequestMapping(value = "/atOffsetOnOff")
+    @RequestMapping(value = "/ATOffset_onOff")
     public String atOffsetOnOff(){
         atOffsetCommand.onOff().execute();
-        return "redirect:/?command=atOffsetOnOff";
+        return "redirect:/?command=ATOffset_onOff";
     }
 }

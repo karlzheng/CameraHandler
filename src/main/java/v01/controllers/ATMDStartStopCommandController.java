@@ -9,9 +9,9 @@ public class ATMDStartStopCommandController {
 
     private ATMDStartStopCommand atmdStartStopCommand = new ATMDStartStopCommand();
 
-    @RequestMapping(value = "/atMDStartStop")
+    @RequestMapping(value = "/ATMDStartStop_startStop")
     public String atMDStartStop(){
         atmdStartStopCommand.startStop().execute();
-        return "redirect:/?command=atMDStartStop";
+        return "redirect:/?command=ATMDStartStop_startStop";
     }
 }

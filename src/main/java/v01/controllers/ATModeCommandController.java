@@ -9,21 +9,21 @@ public class ATModeCommandController {
 
     private ATModeCommand atModeCommand = new ATModeCommand();
 
-    @RequestMapping(value = "/atModeOn")
+    @RequestMapping(value = "/ATMode_on")
     public String atModeOn(){
         atModeCommand.on().execute();
-        return "redirect:/?command=atModeOn";
+        return "redirect:/?command=ATMode_on";
     }
 
-    @RequestMapping(value = "/atModeOff")
+    @RequestMapping(value = "/ATMode_off")
     public String atModeOff(){
         atModeCommand.off().execute();
-        return "redirect:/?command=atModeOff";
+        return "redirect:/?command=ATMode_off";
     }
 
-    @RequestMapping(value = "/atModeOnOff")
+    @RequestMapping(value = "/ATMode_onOff")
     public String atModeOnOff(){
         atModeCommand.onOff().execute();
-        return "redirect:/?command=atModeOnOff";
+        return "redirect:/?command=ATMode_onOff";
     }
 }

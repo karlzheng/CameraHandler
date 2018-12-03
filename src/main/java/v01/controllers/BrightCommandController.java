@@ -9,21 +9,21 @@ public class BrightCommandController {
 
     private BrightCommand brightCommand = new BrightCommand();
 
-    @RequestMapping(value = "/brightReset")
+    @RequestMapping(value = "/Bright_reset")
     public String brightReset(){
         brightCommand.reset().execute();
-        return "redirect:/?command=brightReset";
+        return "redirect:/?command=Bright_reset";
     }
 
-    @RequestMapping(value = "/brightUp")
+    @RequestMapping(value = "/Bright_up")
     public String brightUp(){
         brightCommand.up().execute();
-        return "redirect:/?command=brightUp";
+        return "redirect:/?command=Bright_up";
     }
 
-    @RequestMapping(value = "/brightDown")
+    @RequestMapping(value = "/Bright_down")
     public String brightDown(){
         brightCommand.down().execute();
-        return "redirect:/?command=brightDown";
+        return "redirect:/?command=Bright_down";
     }
 }

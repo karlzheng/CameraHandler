@@ -10,75 +10,75 @@ public class PanTiltCommandController {
 
     private PanTiltCommand panTiltCommand = new PanTiltCommand();
 
-    @RequestMapping(value = "/panTiltHome")
+    @RequestMapping(value = "/PanTilt_home")
     public String panTiltHome(){
         panTiltCommand.home().execute();
-        return "redirect:/?command=panTiltHome";
+        return "redirect:/?command=PanTilt_home";
     }
 
-    @RequestMapping(value = "/panTiltUp")
+    @RequestMapping(value = "/PanTilt_up")
     public String panTiltUp(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
         panTiltCommand.up(panSpeed, tiltSpeed).execute();
-        return "redirect:/?command=panTiltUp";
+        return "redirect:/?command=PanTilt_up";
     }
 
-    @RequestMapping(value = "/panTiltDown")
+    @RequestMapping(value = "/PanTilt_down")
     public String panTiltDown(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
         panTiltCommand.down(panSpeed, tiltSpeed).execute();
-        return "redirect:/?command=panTiltDown";
+        return "redirect:/?command=PanTilt_down";
     }
 
-    @RequestMapping(value = "/panTiltLeft")
+    @RequestMapping(value = "/PanTilt_left")
     public String panTiltLeft(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
         panTiltCommand.left(panSpeed, tiltSpeed).execute();
-        return "redirect:/?command=panTiltLeft";
+        return "redirect:/?command=PanTilt_left";
     }
 
-    @RequestMapping(value = "/panTiltRight")
+    @RequestMapping(value = "/PanTilt_right")
     public String panTiltRight(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
         panTiltCommand.right(panSpeed, tiltSpeed).execute();
-        return "redirect:/?command=panTiltRight";
+        return "redirect:/?command=PanTilt_right";
     }
 
-    @RequestMapping(value = "/panTiltUpLeft")
+    @RequestMapping(value = "/PanTilt_upLeft")
     public String panTiltUpLeft(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
         panTiltCommand.upLeft(panSpeed, tiltSpeed).execute();
-        return "redirect:/?command=panTiltUpLeft";
+        return "redirect:/?command=PanTilt_upLeft";
     }
 
-    @RequestMapping(value = "/panTiltUpRight")
+    @RequestMapping(value = "/PanTilt_upRight")
     public String panTiltUpRight(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
         panTiltCommand.upRight(panSpeed, tiltSpeed).execute();
-        return "redirect:/?command=panTiltUpRight";
+        return "redirect:/?command=PanTilt_upRight";
     }
 
-    @RequestMapping(value = "/panTiltDownLeft")
+    @RequestMapping(value = "/PanTilt_downLeft")
     public String panTiltDownLeft(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
         panTiltCommand.downLeft(panSpeed, tiltSpeed).execute();
-        return "redirect:/?command=panTiltDownLeft";
+        return "redirect:/?command=PanTilt_downLeft";
     }
 
-    @RequestMapping(value = "/panTiltDownRight")
+    @RequestMapping(value = "/PanTilt_downRight")
     public String panTiltDownRight(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
         panTiltCommand.downRight(panSpeed, tiltSpeed).execute();
-        return "redirect:/?command=panTiltDownRight";
+        return "redirect:/?command=PanTilt_downRight";
     }
 
-    @RequestMapping(value = "/panTiltStop")
+    @RequestMapping(value = "/PanTilt_stop")
     public String panTiltStop(@RequestParam int panSpeed, @RequestParam int tiltSpeed){
         panTiltCommand.stop(panSpeed, tiltSpeed).execute();
-        return "redirect:/?command=panTiltStop";
+        return "redirect:/?command=PanTilt_stop";
     }
 
-    @RequestMapping(value = "/panTiltAbsolutePosition")
+    @RequestMapping(value = "/PanTilt_absolutePosition")
     public String panTiltAbsolutePosition(@RequestParam int panSpeed, @RequestParam int tiltSpeed, @RequestParam int panPosition, @RequestParam int tiltPosition){
         panTiltCommand.absolutePosition(panSpeed, tiltSpeed, panPosition, tiltPosition).execute();
-        return "redirect:/?command=panTiltAbsolutePosition";
+        return "redirect:/?command=PanTilt_absolutePosition";
     }
 
-    @RequestMapping(value = "/panTiltRelativePosition")
+    @RequestMapping(value = "/PanTilt_relativePosition")
     public String panTiltRelativePosition(@RequestParam int panSpeed, @RequestParam int tiltSpeed, @RequestParam int panPosition, @RequestParam int tiltPosition){
         panTiltCommand.relativePosition(panSpeed, tiltSpeed, panPosition, tiltPosition).execute();
-        return "redirect:/?command=panTiltRelativePosition";
+        return "redirect:/?command=PanTilt_relativePosition";
     }
 }

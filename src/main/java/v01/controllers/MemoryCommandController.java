@@ -10,21 +10,21 @@ public class MemoryCommandController {
 
     private MemoryCommand memoryCommand = new MemoryCommand();
 
-    @RequestMapping(value = "/memoryReset")
+    @RequestMapping(value = "/Memory_reset")
     public String memoryReset(@RequestParam int positionNumber){
         memoryCommand.reset(positionNumber).execute();
-        return "redirect:/?command=memoryReset";
+        return "redirect:/?command=Memory_reset";
     }
 
-    @RequestMapping(value = "/memorySet")
+    @RequestMapping(value = "/Memory_set")
     public String memorySet(@RequestParam int positionNumber){
         memoryCommand.set(positionNumber).execute();
-        return "redirect:/?command=memorySet";
+        return "redirect:/?command=Memory_set";
     }
 
-    @RequestMapping(value = "/memoryRecall")
+    @RequestMapping(value = "/Memory_recall")
     public String memoryRecall(@RequestParam int positionNumber){
         memoryCommand.recall(positionNumber).execute();
-        return "redirect:/?command=memoryRecall";
+        return "redirect:/?command=Memory_recall";
     }
 }

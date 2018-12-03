@@ -10,15 +10,15 @@ public class PanTiltLimitSetCommandController {
 
     private PanTiltLimitSetCommand panTiltLimitSetCommand = new PanTiltLimitSetCommand();
 
-    @RequestMapping(value = "/panTiltlimitSet")
-    public String panTiltlimitSet(@RequestParam int corner, @RequestParam int panPosition, @RequestParam int tiltPosition){
+    @RequestMapping(value = "/PanTiltLimitSet_limitSet")
+    public String panTiltLimitSetLimitSet(@RequestParam int corner, @RequestParam int panPosition, @RequestParam int tiltPosition){
         panTiltLimitSetCommand.limitSet(corner, panPosition, tiltPosition).execute();
-        return "redirect:/?command=panTiltlimitSet";
+        return "redirect:/?command=PanTiltLimitSet_limitSet";
     }
 
-    @RequestMapping(value = "/panTiltlimitClear")
-    public String panTiltlimitClear(@RequestParam int corner){
+    @RequestMapping(value = "/PanTiltLimitSet_limitClear")
+    public String panTiltLimitSetLimitClear(@RequestParam int corner){
         panTiltLimitSetCommand.limitClear(corner).execute();
-        return "redirect:/?command=panTiltlimitClear";
+        return "redirect:/?command=panTiltLimitSet_limitClear";
     }
 }

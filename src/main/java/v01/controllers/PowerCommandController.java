@@ -9,13 +9,13 @@ public class PowerCommandController {
 
     private PowerCommand powerCommand = new PowerCommand();
 
-    @RequestMapping(value = "/powerOn")
+    @RequestMapping(value = "/Power_on")
     public String powerOn(){
         powerCommand.on().execute();
         return "redirect:/?command=powerOn&status=on";
     }
 
-    @RequestMapping(value = "/powerOff")
+    @RequestMapping(value = "/Power_off")
     public String powerOff(){
         powerCommand.off().execute();
         return "redirect:/?command=powerOff&status=off";

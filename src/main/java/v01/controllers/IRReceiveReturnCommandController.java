@@ -9,15 +9,15 @@ public class IRReceiveReturnCommandController {
 
     private IRReceiveReturnCommand irReceiveReturnCommand = new IRReceiveReturnCommand();
 
-    @RequestMapping(value = "/irReceiveReturnOn")
+    @RequestMapping(value = "/IRReceiveReturn_on")
     public String irReceiveReturnOn(){
         irReceiveReturnCommand.on().execute();
-        return "redirect:/?command=irReceiveReturnOn";
+        return "redirect:/?command=IRReceiveReturn_on";
     }
 
-    @RequestMapping(value = "/irReceiveReturnOff")
+    @RequestMapping(value = "/IRReceiveReturn_off")
     public String irReceiveReturnOff(){
         irReceiveReturnCommand.off().execute();
-        return "redirect:/?command=irReceiveReturnOff";
+        return "redirect:/?command=IRReceiveReturn_off";
     }
 }

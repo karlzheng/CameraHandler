@@ -10,39 +10,39 @@ public class ZoomCommandController {
 
     private ZoomCommand zoomCommand = new ZoomCommand();
 
-    @RequestMapping(value = "/zoomStop")
+    @RequestMapping(value = "/Zoom_stop")
     public String zoomStop(){
         zoomCommand.stop().execute();
-        return "redirect:/?command=zoopStop";
+        return "redirect:/?command=Zoom_stop";
     }
 
-    @RequestMapping(value = "/zoomTele")
+    @RequestMapping(value = "/Zoom_tele")
     public String zoomTele(){
         zoomCommand.tele().execute();
-        return "redirect:/?command=zoomTele";
+        return "redirect:/?command=Zoom_tele";
     }
 
-    @RequestMapping(value = "/zoomWide")
+    @RequestMapping(value = "/Zoom_wide")
     public String zoomWide(){
         zoomCommand.wide().execute();
-        return "redirect:/?command=zoomWide";
+        return "redirect:/?command=Zoom_wide";
     }
 
-    @RequestMapping(value = "/zoomTeleWithSpeed")
+    @RequestMapping(value = "/Zoom_teleWithSpeed")
     public String zoomTele(@RequestParam int zoomSpeed){
         zoomCommand.tele(zoomSpeed).execute();
-        return "redirect:/?command=zoomTeleWithSpeed";
+        return "redirect:/?command=Zoom_teleWithSpeed";
     }
 
-    @RequestMapping(value = "/zoomWideWithSpeed")
+    @RequestMapping(value = "/Zoom_wideWithSpeed")
     public String zoomWide(@RequestParam int zoomSpeed){
         zoomCommand.wide(zoomSpeed).execute();
-        return "redirect:/?command=zoomWideWithSpeed";
+        return "redirect:/?command=Zoom_wideWithSpeed";
     }
 
-    @RequestMapping(value = "/zoomDirect")
+    @RequestMapping(value = "/Zoom_direct")
     public String zoomDirect(@RequestParam int zoomData){
         zoomCommand.direct(zoomData).execute();
-        return "redirect:/?command=zoomDirect";
+        return "redirect:/?command=Zoom_direct";
     }
 }

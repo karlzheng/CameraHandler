@@ -9,21 +9,21 @@ public class IRReceiveCommandController {
 
     private IRReceiveCommand irReceiveCommand = new IRReceiveCommand();
 
-    @RequestMapping(value = "/irReceiveOn")
+    @RequestMapping(value = "/IRReceive_on")
     public String irReceiveOn(){
         irReceiveCommand.on().execute();
-        return "redirect:/?command=irReceiveOn";
+        return "redirect:/?command=IRReceive_on";
     }
 
-    @RequestMapping(value = "/irReceiveOff")
+    @RequestMapping(value = "/IRReceive_off")
     public String irReceiveOff(){
         irReceiveCommand.off().execute();
-        return "redirect:/?command=irReceiveOff";
+        return "redirect:/?command=IRReceive_off";
     }
 
-    @RequestMapping(value = "/irReceiveOnOff")
+    @RequestMapping(value = "/IRReceive_onOff")
     public String irReceiveOnOff(){
         irReceiveCommand.onOff().execute();
-        return "redirect:/?command=irReceiveOnOff";
+        return "redirect:/?command=IRReceive_onOff";
     }
 }

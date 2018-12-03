@@ -9,15 +9,15 @@ public class BacklightCommandController {
 
     private BacklightCommand backlightCommand = new BacklightCommand();
 
-    @RequestMapping(value = "/backlightOn")
+    @RequestMapping(value = "/Backlight_on")
     public String backlightOn(){
         backlightCommand.on().execute();
-        return "redirect:/?command=backlightOn";
+        return "redirect:/?command=Backlight_on";
     }
 
-    @RequestMapping(value = "/backlightOff")
+    @RequestMapping(value = "/Backlight_off")
     public String backlightOff(){
         backlightCommand.off().execute();
-        return "redirect:/?command=backlightOff";
+        return "redirect:/?command=Backlight_off";
     }
 }

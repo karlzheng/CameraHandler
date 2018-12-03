@@ -9,15 +9,15 @@ public class KeyLockCommandController {
 
     private KeyLockCommand keyLockCommand = new KeyLockCommand();
 
-    @RequestMapping(value = "/keyLockOn")
+    @RequestMapping(value = "/KeyLock_on")
     public String keyLockOn(){
         keyLockCommand.on().execute();
-        return "redirect:/?command=keyLockOn";
+        return "redirect:/?command=KeyLock_on";
     }
 
-    @RequestMapping(value = "/keyLockOff")
+    @RequestMapping(value = "/KeyLock_off")
     public String keyLockOff(){
         keyLockCommand.off().execute();
-        return "redirect:/?command=keyLockOff";
+        return "redirect:/?command=KeyLock_off";
     }
 }

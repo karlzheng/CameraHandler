@@ -9,21 +9,21 @@ public class ATAECommandController {
 
     private ATAECommand ataeCommand = new ATAECommand();
 
-    @RequestMapping(value = "/atAEOn")
+    @RequestMapping(value = "/ATAE_on")
     public String atAEOn(){
         ataeCommand.on().execute();
-        return "redirect:/?command=atAEOn";
+        return "redirect:/?command=ATAE_on";
     }
 
-    @RequestMapping(value = "/atAEOff")
+    @RequestMapping(value = "/ATAE_off")
     public String atAEOff(){
         ataeCommand.off().execute();
-        return "redirect:/?command=atAEOff";
+        return "redirect:/?command=ATAE_off";
     }
 
-    @RequestMapping(value = "/atAEOnOff")
+    @RequestMapping(value = "/ATAE_onOff")
     public String atAEOnOff(){
         ataeCommand.onOff().execute();
-        return "redirect:/?command=atAEOnOff";
+        return "redirect:/?command=ATAE_onOff";
     }
 }

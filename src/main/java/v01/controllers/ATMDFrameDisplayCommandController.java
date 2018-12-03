@@ -9,21 +9,21 @@ public class ATMDFrameDisplayCommandController {
 
     private ATMDFrameDisplayCommand atmdFrameDisplayCommand = new ATMDFrameDisplayCommand();
 
-    @RequestMapping(value = "/atMDFrameDisplayOn")
+    @RequestMapping(value = "/ATMDFrameDisplay_on")
     public String atMDFrameDisplayOn(){
         atmdFrameDisplayCommand.on().execute();
-        return "redirect:/?command=atMDFrameDisplayOn";
+        return "redirect:/?command=ATMDFrameDisplay_on";
     }
 
-    @RequestMapping(value = "/atMDFrameDisplayOff")
+    @RequestMapping(value = "/ATMDFrameDisplay_off")
     public String atMDFrameDisplayOff(){
         atmdFrameDisplayCommand.off().execute();
-        return "redirect:/?command=atMDFrameDisplayOff";
+        return "redirect:/?command=ATMDFrameDisplay_off";
     }
 
-    @RequestMapping(value = "/atMDFrameDisplayOnOff")
+    @RequestMapping(value = "/ATMDFrameDisplay_onOff")
     public String atMDFrameDisplayOnOff(){
         atmdFrameDisplayCommand.onOff().execute();
-        return "redirect:/?command=atMDFrameDisplayOnOff";
+        return "redirect:/?command=ATMDFrameDisplay_onOff";
     }
 }
