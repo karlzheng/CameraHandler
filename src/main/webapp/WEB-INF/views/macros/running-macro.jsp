@@ -3,7 +3,7 @@
 
 
 <select name="macro">
-    <c:forEach var="macro" items="<%=Macros.getMacros()%>">
-        <option value="${macro.name}">${macro.name}</option>
+    <c:forEach var="name" items="<%=Macros.getMacrosName()%>">
+        <option value="${name}">${name}</option>
     </c:forEach>
 </select>

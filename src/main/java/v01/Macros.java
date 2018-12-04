@@ -3,6 +3,7 @@ package v01;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Macros {
 
@@ -18,8 +19,16 @@ public class Macros {
     }
 
     public static void addMacro(String name) {
-//        macros.add(new Macro(name, new ArrayList<>()));
-//        newMacroMethods.clear();
+        macros.add(new Macro(name, new ArrayList<>()));
+        newMacroMethods.clear();
+    }
+
+    public static boolean isNameBusy(String name){
+        return macros.stream().anyMatch(e -> e.getName().equals(name));
+    }
+
+    public static List<String> getMacrosName() {
+        return macros.stream().map(e -> e.getName()).collect(Collectors.toList());
     }
 
     public static List<Macro> getMacros() {

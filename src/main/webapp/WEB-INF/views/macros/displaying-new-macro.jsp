@@ -9,6 +9,11 @@
 </ol>
 
 <form action="/addMacro">
+    <c:if test="${param.alert == 'nameisbusy'}">
+        <div class="alert alert-danger">
+            <p>Nazwa jest juz zajeta!</p>
+        </div>
+    </c:if>
     <input type="text" name="macroName" placeholder="Macro name" required />
     <p><input type="submit" value="Save macro"></p>
 </form>

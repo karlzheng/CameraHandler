@@ -5,18 +5,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import v01.CommandList;
 import v01.Macros;
-import v01.commands.Command;
 
-import java.util.*;
-
-import static java.util.stream.Collectors.toList;
+import java.util.List;
+import java.util.Objects;
 
 @Controller
 public class MacrosController {
 
     @RequestMapping(value = "/addMacro")
     public String addMacro(@RequestParam String macroName) {
-        Macros.addMacro(macroName);
+        if(!Macros.isNameBusy(macroName)){
+            Macros.addMacro(macroName);
+        } else {
+            return "redirect:/?alert=nameisbusy";
+        }
         return "redirect:/";
     }
 
