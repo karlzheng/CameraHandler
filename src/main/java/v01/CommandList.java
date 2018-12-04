@@ -15,6 +15,7 @@ public class CommandList {
     static {
         commands = new HashMap<>();
 
+        Param[] delay = new Param[]{new Param("seconds",1,120)};
         Param[] empty = new Param[]{};
         Param[] focusData = new Param[]{new Param("focusData", 0, 100)};
         Param[] posNum = new Param[]{new Param("positionNumber", 0, 5)};
@@ -35,6 +36,8 @@ public class CommandList {
         Param[] zoomSpeed = new Param[]{new Param("zoomSpeed", 2, 7)};
         Param[] zoomData = new Param[]{new Param("zoomData", 0, 100)};
 
+        List<CamMethod> delayList = Collections.singletonList(
+                new CamMethod("delay", delay));
         List<CamMethod> onOff3List = Arrays.asList(
                 new CamMethod("on", empty),
                 new CamMethod("off", empty),
@@ -87,6 +90,8 @@ public class CommandList {
                 new CamMethod("teleWithSpeed", zoomSpeed),
                 new CamMethod("wideWithSpeed", zoomSpeed),
                 new CamMethod("direct", zoomData));
+
+        commands.put("Delay", delayList);
         commands.put("ATAE", onOff3List);
         commands.put("ATAutoZoom", onOff3List);
         commands.put("ATMDFrameDisplay", onOff3List);
@@ -117,7 +122,7 @@ public class CommandList {
         private Param[] params;
 
         public CamMethod(CamMethod camMethod) {
-            this.name = new String(camMethod.name);
+            this.name = camMethod.name;
             this.params = new Param[camMethod.params.length];
             for (int i = 0; i < camMethod.params.length; i++)
                 this.params[i] = new Param(camMethod.params[i]);
@@ -192,7 +197,7 @@ public class CommandList {
         }
 
         public Param(Param param) {
-            this.name = new String(param.name);
+            this.name = param.name;
             this.minVal = param.minVal;
             this.maxVal = param.maxVal;
             this.val = param.val;
