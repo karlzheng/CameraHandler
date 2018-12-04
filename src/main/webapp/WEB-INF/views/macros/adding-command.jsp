@@ -4,7 +4,10 @@
 <%@ page import="java.util.Objects" %>
 
 <form action="/chooseCommand">
-    <select name="command" onchange="this.form.submit()">
+    <select name="command" onchange="this.form.submit();">
+        <c:if test="${param.cmdFam == null && param.cmd == null}">
+            <option id="emptyOpt" disabled selected value style="display:none"> -- select command -- </option>
+        </c:if>
         <c:forEach var="commandFamily" items="<%=CommandList.getCommands()%>">
             <optgroup label="${commandFamily.key}">
                 <c:forEach var="command" items="${commandFamily.value}">
@@ -49,12 +52,12 @@
 </script>
 
 
-<form action="/addCommand" onsubmit="disableInputs(this)" oninput="args.value = <%= argsConcat %>">
+<form action="/addCommand" onsubmit="disableInputs(this);" oninput="args.value = <%= argsConcat %>">
     <input type="hidden" name="commandFamily" value="<%= cmdFamily %>" />
     <input type="hidden" name="commandName" value="<%= cmdName %>" />
     <input type="hidden" name="args" />
     <c:forEach var="p" items='<%= methodParams %>' varStatus="loop">
         ${p.name}: <input name="arg${loop.index}" type="number" min="${p.minVal}" max="${p.maxVal}" required>
     </c:forEach>
-    <p><input type="submit" value="Dodaj"></p>
+    <p><input <%= ((cmdFamily==null || cmdName==null) ? "disabled" : "")%> type="submit" value="Dodaj"></p>
 </form>
