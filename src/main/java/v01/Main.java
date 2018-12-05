@@ -3,6 +3,11 @@ package v01;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 import v01.commands.Command;
+import v01.terminalhandler.CameraCommandsParser;
+import v01.terminalhandler.CameraCommandsTranslator;
+import v01.terminalhandler.CommandContainer;
+
+import java.util.Scanner;
 
 public class Main {
 
@@ -23,6 +28,26 @@ public class Main {
             e.printStackTrace();
         }
 
+        Scanner input = new Scanner(System.in);
+        CameraCommandsParser parser = new CameraCommandsParser();
+        CameraCommandsTranslator translator = new CameraCommandsTranslator();
+
+//        Thread terminalHandling = new Thread(){
+//            public void run(){
+//                while (true){
+//                    String consoleIn = input.next();
+//                    CommandContainer container = parser.parseCommand(consoleIn);
+//                    try {
+//                        translator.transalate(container).execute();
+//                    } catch (SerialPortException e) {
+//                        e.printStackTrace();
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        };
+//        terminalHandling.start();
     }
 
     private static SerialPort configConnection(String portName) throws SerialPortException {
