@@ -120,6 +120,7 @@ public class CommandList {
     public static class CamMethod {
         private String name;
         private Param[] params;
+        private Supplier supplier;
 
         public CamMethod(CamMethod camMethod) {
             this.name = camMethod.name;
@@ -139,6 +140,10 @@ public class CommandList {
 
         public Param[] getParams() {
             return params;
+        }
+
+        public int getCountOfParams(){
+            return params.length;
         }
 
         public void setParams(String args) {

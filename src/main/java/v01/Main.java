@@ -2,6 +2,7 @@ package v01;
 
 import jssc.SerialPort;
 import jssc.SerialPortException;
+import v01.commands.Command;
 
 public class Main {
 
@@ -15,11 +16,8 @@ public class Main {
             serialPort.writeBytes(data);
             System.out.println("Wysłany adres");
 
+            Command.setSerialPort(serialPort);
             Thread.sleep(1000);
-
-            data = new byte[] { -127, 1, 6, 1, 1, 2, 3, 2, -1};
-            serialPort.writeBytes(data);
-            System.out.println("Home");
 
         } catch (SerialPortException | InterruptedException e) {
             e.printStackTrace();
