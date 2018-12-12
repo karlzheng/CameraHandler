@@ -53,14 +53,12 @@ public class MacrosController {
 
     @RequestMapping(value = "/executeMacro")
     public String runMacros(@RequestParam String macroName) {
-        Macro macro = Macros.getMacros().stream()
-                .filter(element-> element.getName().toLowerCase().equals(macroName.toLowerCase()))
+        Macros.getMacros()
+                .stream()
+                .filter(element -> element.getName().toLowerCase().equals(macroName.toLowerCase()))
                 .findAny()
-                .orElse(null);
-        if(macro != null){
-            List<CamMethod> methodList = macro.getMethods();
-            methodList.stream().forEach(method -> method.execute());
-        }
+                .ifPresent(macro -> macro.getMethods().forEach(CamMethod::execute));
+
         return "redirect:/";
     }
 }

@@ -2,8 +2,13 @@
 <%@ page import="v01.Macros" %>
 
 
-<select name="macro">
-    <c:forEach var="name" items="<%=Macros.getMacrosName()%>">
-        <option value="${name}">${name}</option>
-    </c:forEach>
-</select>
+<form action="/executeMacro">
+
+    <select name="macroName">
+        <c:forEach var="name" items="<%=Macros.getMacrosName()%>">
+            <option value="${name}">${name}</option>
+        </c:forEach>
+    </select>
+
+    <input type="submit" value="Execute macro">
+</form>
