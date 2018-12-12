@@ -108,7 +108,8 @@ public class CommandList {
                 new CamMethod("stop", panSpdTilSpd, PanTiltCommand.class),
                 new CamMethod("absolutePosition", panTilSpdPos, PanTiltCommand.class),
                 new CamMethod("relativePosition", panTilSpdPos, PanTiltCommand.class),
-                new CamMethod("home", empty, PanTiltCommand.class));
+                new CamMethod("home", empty, PanTiltCommand.class),
+                new CamMethod("reset", empty, PanTiltCommand.class));
         List<CamMethod> panTiltLimitSetList = Arrays.asList(
                 new CamMethod("limitSet", cornerPanTilPos, PanTiltLimitSetCommand.class),
                 new CamMethod("limitClear", corner, PanTiltLimitSetCommand.class));
