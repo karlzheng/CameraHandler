@@ -1,7 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="v01.CommandList" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Objects" %>
+<%@ page import="v01.Param" %>
 
 <form action="/chooseCommand">
     <select name="command" onchange="this.form.submit();">
@@ -27,7 +26,7 @@
 <%
     String cmdFamily = request.getParameter("cmdFam");
     String cmdName = request.getParameter("cmd");
-    CommandList.Param[] methodParams = CommandList.getParams(cmdFamily, cmdName);
+    Param[] methodParams = CommandList.getParams(cmdFamily, cmdName);
 
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < methodParams.length; i++) {
