@@ -17,6 +17,12 @@ public class PanTiltCommandController {
         return "redirect:/?command=PanTilt_home";
     }
 
+    @RequestMapping(value = "/PanTilt_reset")
+    public String panTiltReset() throws SerialPortException, InterruptedException {
+        panTiltCommand.reset().execute();
+        return "redirect:/?command=PanTilt_reset";
+    }
+
     @RequestMapping(value = "/PanTilt_up")
     public String panTiltUp(@RequestParam int panSpeed, @RequestParam int tiltSpeed) throws SerialPortException, InterruptedException {
         panTiltCommand.up(panSpeed, tiltSpeed).execute();
