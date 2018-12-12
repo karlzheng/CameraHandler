@@ -9,6 +9,8 @@ import v01.terminalhandler.CommandContainer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.AbstractMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -56,9 +58,14 @@ public final class AppInitializer {
                         continue;
 
                     CamMethod method = CommandList.getCommands()
-                            .get(container.getGroupName())
+                            .entrySet()
                             .stream()
-                            .filter(m -> Objects.equals(m.getName(), container.getCommandName()))
+                            .filter(e -> Objects.equals(e.getKey().toLowerCase(), container.getGroupName()))
+                            .findAny()
+                            .orElse(new AbstractMap.SimpleEntry<>("",new ArrayList<>()))
+                            .getValue()
+                            .stream()
+                            .filter(m -> Objects.equals(m.getName().toLowerCase(), container.getCommandName()))
                             .findAny()
                             .orElse(null);
 
