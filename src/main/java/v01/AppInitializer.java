@@ -16,7 +16,6 @@ public final class AppInitializer {
     }
 
     public static void init() throws IOException {
-        System.out.println("init");
 //        try {
 //            SerialPort serialPort = configConnection("COM4");
 //            byte[] data = { -120, 48, 1, -1 };
