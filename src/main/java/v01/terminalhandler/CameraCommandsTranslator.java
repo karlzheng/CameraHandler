@@ -1,14 +1,16 @@
 package v01.terminalhandler;
 
+import v01.CamMethod;
 import v01.CommandList;
-import v01.commands.*;
+import v01.commands.ATAECommand;
+import v01.commands.Command;
 
 import java.util.List;
 import java.util.Map;
 
 public class CameraCommandsTranslator {
 
-    private final Map<String, List<CommandList.CamMethod>> commandList;
+    private final Map<String, List<CamMethod>> commandList;
 
     public CameraCommandsTranslator(){
         this.commandList = CommandList.getCommands();

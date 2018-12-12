@@ -1,5 +1,6 @@
 package v01.terminalhandler;
 
+import v01.CamMethod;
 import v01.CommandList;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ public class CameraCommandsParser {
 
     private static final String SEPARATOR = " ";
 
-    private final Map<String, List<CommandList.CamMethod>> commandList;
+    private final Map<String, List<CamMethod>> commandList;
 
     public CameraCommandsParser(){
         this.commandList = CommandList.getCommands();

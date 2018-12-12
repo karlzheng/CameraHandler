@@ -3,6 +3,7 @@ package v01.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import v01.CamMethod;
 import v01.CommandList;
 import v01.Macros;
 
@@ -33,11 +34,11 @@ public class MacrosController {
                              @RequestParam String args) {
 
         if (commandFamily != null && commandName != null) {
-            List<CommandList.CamMethod> camMethods = CommandList.getCommands().get(commandFamily);
+            List<CamMethod> camMethods = CommandList.getCommands().get(commandFamily);
 
-            for (CommandList.CamMethod command : camMethods) {
+            for (CamMethod command : camMethods) {
                 if (Objects.equals(command.getName(), commandName)) {
-                    CommandList.CamMethod newMethod = new CommandList.CamMethod(command);
+                    CamMethod newMethod = new CamMethod(command);
                     newMethod.setParams(args);
                     Macros.addMethod(newMethod);
                     break;

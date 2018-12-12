@@ -1,12 +1,8 @@
 package v01;
 
-import v01.commands.Command;
-import v01.commands.KeyLockCommand;
+import v01.commands.*;
 
 import java.util.*;
-import java.util.function.Supplier;
-
-import static java.util.stream.Collectors.toList;
 
 public class CommandList {
 
@@ -37,79 +33,112 @@ public class CommandList {
         Param[] zoomData = new Param[]{new Param("zoomData", 0, 100)};
 
         List<CamMethod> delayList = Collections.singletonList(
-                new CamMethod("delay", delay));
-        List<CamMethod> onOff3List = Arrays.asList(
-                new CamMethod("on", empty),
-                new CamMethod("off", empty),
-                new CamMethod("onOff", empty));
-        List<CamMethod> onOff2List = Arrays.asList(
-                new CamMethod("on", empty),
-                new CamMethod("off", empty));
+                new CamMethod("delay", delay, DelayCommand.class));
+        List<CamMethod> ataeList = Arrays.asList(
+                new CamMethod("on", empty, ATAECommand.class),
+                new CamMethod("off", empty, ATAECommand.class),
+                new CamMethod("onOff", empty, ATAECommand.class));
+        List<CamMethod> atAutoZoomList = Arrays.asList(
+                new CamMethod("on", empty, ATAutoZoomCommand.class),
+                new CamMethod("off", empty, ATAutoZoomCommand.class),
+                new CamMethod("onOff", empty, ATAutoZoomCommand.class));
+        List<CamMethod> atmdFrameDisplayList = Arrays.asList(
+                new CamMethod("on", empty, ATMDFrameDisplayCommand.class),
+                new CamMethod("off", empty, ATMDFrameDisplayCommand.class),
+                new CamMethod("onOff", empty, ATMDFrameDisplayCommand.class));
+        List<CamMethod> atModeList = Arrays.asList(
+                new CamMethod("on", empty, ATModeCommand.class),
+                new CamMethod("off", empty, ATModeCommand.class),
+                new CamMethod("onOff", empty, ATModeCommand.class));
+        List<CamMethod> atOffsetList = Arrays.asList(
+                new CamMethod("on", empty, ATOffsetCommand.class),
+                new CamMethod("off", empty, ATOffsetCommand.class),
+                new CamMethod("onOff", empty, ATOffsetCommand.class));
+        List<CamMethod> datascreenList = Arrays.asList(
+                new CamMethod("on", empty, DatascreenCommand.class),
+                new CamMethod("off", empty, DatascreenCommand.class),
+                new CamMethod("onOff", empty, DatascreenCommand.class));
+        List<CamMethod> irReceiveList = Arrays.asList(
+                new CamMethod("on", empty, IRReceiveCommand.class),
+                new CamMethod("off", empty, IRReceiveCommand.class),
+                new CamMethod("onOff", empty, IRReceiveCommand.class));
+        List<CamMethod> backlightList = Arrays.asList(
+                new CamMethod("on", empty, BacklightCommand.class),
+                new CamMethod("off", empty, BacklightCommand.class));
+        List<CamMethod> irReceiveReturnList = Arrays.asList(
+                new CamMethod("on", empty, IRReceiveReturnCommand.class),
+                new CamMethod("off", empty, IRReceiveReturnCommand.class));
+        List<CamMethod> keyLockList = Arrays.asList(
+                new CamMethod("on", empty, KeyLockCommand.class),
+                new CamMethod("off", empty, KeyLockCommand.class));
+        List<CamMethod> powerList = Arrays.asList(
+                new CamMethod("on", empty, PowerCommand.class),
+                new CamMethod("off", empty, PowerCommand.class));
         List<CamMethod> atmdStartStopList = Collections.singletonList(
-                new CamMethod("startStop", empty));
+                new CamMethod("startStop", empty, ATMDStartStopCommand.class));
         List<CamMethod> brightList = Arrays.asList(
-                new CamMethod("reset", empty),
-                new CamMethod("up", empty),
-                new CamMethod("down", empty));
+                new CamMethod("reset", empty, BrightCommand.class),
+                new CamMethod("up", empty, BrightCommand.class),
+                new CamMethod("down", empty, BrightCommand.class));
         List<CamMethod> focusList = Arrays.asList(
-                new CamMethod("stop", empty),
-                new CamMethod("far", empty),
-                new CamMethod("near", empty),
-                new CamMethod("autoFocusOn", empty),
-                new CamMethod("manualFocusOn", empty),
-                new CamMethod("mixedFocus", empty),
-                new CamMethod("direct", focusData));
+                new CamMethod("stop", empty, FocusCommand.class),
+                new CamMethod("far", empty, FocusCommand.class),
+                new CamMethod("near", empty, FocusCommand.class),
+                new CamMethod("autoFocusOn", empty, FocusCommand.class),
+                new CamMethod("manualFocusOn", empty, FocusCommand.class),
+                new CamMethod("mixedFocus", empty, FocusCommand.class),
+                new CamMethod("direct", focusData, FocusCommand.class));
         List<CamMethod> memoryList = Arrays.asList(
-                new CamMethod("reset", posNum),
-                new CamMethod("set", posNum),
-                new CamMethod("recall", posNum));
+                new CamMethod("reset", posNum, MemoryCommand.class),
+                new CamMethod("set", posNum, MemoryCommand.class),
+                new CamMethod("recall", posNum, MemoryCommand.class));
         List<CamMethod> miscList = Arrays.asList(
-                new CamMethod("addressSet", empty),
-                new CamMethod("IFClear", empty),
-                new CamMethod("commandCancel", sockNum));
+                new CamMethod("addressSet", empty, MiscCommand.class),
+                new CamMethod("IFClear", empty, MiscCommand.class),
+                new CamMethod("commandCancel", sockNum, MiscCommand.class));
         List<CamMethod> panTiltList = Arrays.asList(
-                new CamMethod("up", panSpdTilSpd),
-                new CamMethod("down", panSpdTilSpd),
-                new CamMethod("left", panSpdTilSpd),
-                new CamMethod("right", panSpdTilSpd),
-                new CamMethod("upLeft", panSpdTilSpd),
-                new CamMethod("upRight", panSpdTilSpd),
-                new CamMethod("downLeft", panSpdTilSpd),
-                new CamMethod("downRight", panSpdTilSpd),
-                new CamMethod("stop", panSpdTilSpd),
-                new CamMethod("absolutePosition", panTilSpdPos),
-                new CamMethod("relativePosition", panTilSpdPos),
-                new CamMethod("home", empty));
+                new CamMethod("up", panSpdTilSpd, PanTiltCommand.class),
+                new CamMethod("down", panSpdTilSpd, PanTiltCommand.class),
+                new CamMethod("left", panSpdTilSpd, PanTiltCommand.class),
+                new CamMethod("right", panSpdTilSpd, PanTiltCommand.class),
+                new CamMethod("upLeft", panSpdTilSpd, PanTiltCommand.class),
+                new CamMethod("upRight", panSpdTilSpd, PanTiltCommand.class),
+                new CamMethod("downLeft", panSpdTilSpd, PanTiltCommand.class),
+                new CamMethod("downRight", panSpdTilSpd, PanTiltCommand.class),
+                new CamMethod("stop", panSpdTilSpd, PanTiltCommand.class),
+                new CamMethod("absolutePosition", panTilSpdPos, PanTiltCommand.class),
+                new CamMethod("relativePosition", panTilSpdPos, PanTiltCommand.class),
+                new CamMethod("home", empty, PanTiltCommand.class));
         List<CamMethod> panTiltLimitSetList = Arrays.asList(
-                new CamMethod("limitSet", cornerPanTilPos),
-                new CamMethod("limitClear", corner));
+                new CamMethod("limitSet", cornerPanTilPos, PanTiltLimitSetCommand.class),
+                new CamMethod("limitClear", corner, PanTiltLimitSetCommand.class));
         List<CamMethod> zoomList = Arrays.asList(
-                new CamMethod("stop", empty),
-                new CamMethod("tele", empty),
-                new CamMethod("wide", empty),
-                new CamMethod("teleWithSpeed", zoomSpeed),
-                new CamMethod("wideWithSpeed", zoomSpeed),
-                new CamMethod("direct", zoomData));
+                new CamMethod("stop", empty, ZoomCommand.class),
+                new CamMethod("tele", empty, ZoomCommand.class),
+                new CamMethod("wide", empty, ZoomCommand.class),
+                new CamMethod("teleWithSpeed", zoomSpeed, ZoomCommand.class),
+                new CamMethod("wideWithSpeed", zoomSpeed, ZoomCommand.class),
+                new CamMethod("direct", zoomData, ZoomCommand.class));
 
         commands.put("Delay", delayList);
-        commands.put("ATAE", onOff3List);
-        commands.put("ATAutoZoom", onOff3List);
-        commands.put("ATMDFrameDisplay", onOff3List);
+        commands.put("ATAE", ataeList);
+        commands.put("ATAutoZoom", atAutoZoomList);
+        commands.put("ATMDFrameDisplay", atmdFrameDisplayList);
         commands.put("ATMDStartStop", atmdStartStopList);
-        commands.put("ATMode", onOff3List);
-        commands.put("ATOffset", onOff3List);
-        commands.put("Backlight", onOff2List);
+        commands.put("ATMode", atModeList);
+        commands.put("ATOffset", atOffsetList);
+        commands.put("Backlight", backlightList);
         commands.put("Bright", brightList);
-        commands.put("Datascreen", onOff3List);
+        commands.put("Datascreen", datascreenList);
         commands.put("Focus", focusList);
-        commands.put("IRReceive", onOff3List);
-        commands.put("IRReceiveReturn", onOff2List);
-        commands.put("KeyLock", onOff2List);
+        commands.put("IRReceive", irReceiveList);
+        commands.put("IRReceiveReturn", irReceiveReturnList);
+        commands.put("KeyLock", keyLockList);
         commands.put("Memory", memoryList);
         commands.put("Misc", miscList);
         commands.put("PanTilt", panTiltList);
         commands.put("PanTiltLimitSet", panTiltLimitSetList);
-        commands.put("Power", onOff2List);
+        commands.put("Power", powerList);
         commands.put("Zoom", zoomList);
     }
 
@@ -117,69 +146,12 @@ public class CommandList {
         return commands;
     }
 
-    public static class CamMethod {
-        private String name;
-        private Param[] params;
-        private Supplier supplier;
-
-        public CamMethod(CamMethod camMethod) {
-            this.name = camMethod.name;
-            this.params = new Param[camMethod.params.length];
-            for (int i = 0; i < camMethod.params.length; i++)
-                this.params[i] = new Param(camMethod.params[i]);
-        }
-
-        public CamMethod(String name, Param[] params) {
-            this.name = name;
-            this.params = params;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public Param[] getParams() {
-            return params;
-        }
-
-        public int getCountOfParams(){
-            return params.length;
-        }
-
-        public void setParams(String args) {
-            if (args.isEmpty())
-                return;
-
-            List<Integer> arguments = Arrays.stream(args.split("_")).map(Integer::new).collect(toList());
-
-            for (int i = 0; i < arguments.size(); i++)
-                params[i].setVal(arguments.get(i));
-        }
-
-        public String getParamsString() {
-            if (params.length == 0)
-                return "none";
-
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < params.length; i++) {
-                sb.append(params[i].getName());
-                sb.append(": ");
-                sb.append(params[i].getVal());
-
-                if (i + 1 < params.length)
-                    sb.append(", ");
-            }
-
-            return sb.toString();
-        }
-    }
-
     public static Param[] getParams(String cmdFamily, String cmdName) {
         Param[] methodParams = new Param[]{};
         if (cmdFamily != null && cmdName != null) {
-            List<CommandList.CamMethod> camMethods = CommandList.getCommands().get(cmdFamily);
+            List<CamMethod> camMethods = CommandList.getCommands().get(cmdFamily);
 
-            for (CommandList.CamMethod command : camMethods) {
+            for (CamMethod command : camMethods) {
                 if (Objects.equals(command.getName(), cmdName)) {
                     methodParams = command.getParams();
                     break;
@@ -187,45 +159,5 @@ public class CommandList {
             }
         }
         return methodParams;
-    }
-
-    public static class Param {
-        private String name;
-        private int minVal;
-        private int maxVal;
-        private int val;
-
-        public Param(String name, int minVal, int maxVal) {
-            this.name = name;
-            this.minVal = minVal;
-            this.maxVal = maxVal;
-        }
-
-        public Param(Param param) {
-            this.name = param.name;
-            this.minVal = param.minVal;
-            this.maxVal = param.maxVal;
-            this.val = param.val;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getMinVal() {
-            return minVal;
-        }
-
-        public int getMaxVal() {
-            return maxVal;
-        }
-
-        public void setVal(int val) {
-            this.val = val;
-        }
-
-        public int getVal() {
-            return val;
-        }
     }
 }

@@ -7,14 +7,14 @@ import java.util.stream.Collectors;
 
 public class Macros {
 
-    private static List<CommandList.CamMethod> newMacroMethods = new LinkedList<>();
+    private static List<CamMethod> newMacroMethods = new LinkedList<>();
     private static List<Macro> macros = new LinkedList<>();
 
-    public static void addMethod(CommandList.CamMethod method) {
+    public static void addMethod(CamMethod method) {
         newMacroMethods.add(method);
     }
 
-    public static List<CommandList.CamMethod> getNewMacroMethods() {
+    public static List<CamMethod> getNewMacroMethods() {
         return newMacroMethods;
     }
 
@@ -28,7 +28,7 @@ public class Macros {
     }
 
     public static List<String> getMacrosName() {
-        return macros.stream().map(e -> e.getName()).collect(Collectors.toList());
+        return macros.stream().map(Macro::getName).collect(Collectors.toList());
     }
 
     public static List<Macro> getMacros() {
@@ -39,9 +39,9 @@ public class Macros {
 class Macro {
 
     private String name;
-    private List<CommandList.CamMethod> methods;
+    private List<CamMethod> methods;
 
-    public Macro(String name, List<CommandList.CamMethod> macroMethods) {
+    public Macro(String name, List<CamMethod> macroMethods) {
         this.name = name;
         methods = macroMethods;
     }
@@ -50,7 +50,7 @@ class Macro {
         return name;
     }
 
-    public List<CommandList.CamMethod> getMethods() {
+    public List<CamMethod> getMethods() {
         return methods;
     }
 }
