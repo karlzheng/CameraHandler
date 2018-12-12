@@ -9,6 +9,8 @@ import v01.terminalhandler.CommandContainer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Objects;
 
 public final class AppInitializer {
 
@@ -37,7 +39,7 @@ public final class AppInitializer {
 
         Thread terminalHandling = new Thread() {
             public void run(){
-                while (true){
+                while (true) {
                     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
                     String command = null;
@@ -45,20 +47,31 @@ public final class AppInitializer {
                         command = reader.readLine();
                     } catch (IOException e) {
                         e.printStackTrace();
+                        continue;
                     }
 
-                    CommandContainer container = null;
-                    container = parser.parseCommand(command);
+                    final CommandContainer container = parser.parseCommand(command);
 
-                    if(container != null){
-//                        try {
-//                            translator.transalate(container).execute();
-//                        } catch (SerialPortException e) {
-//                            e.printStackTrace();
-//                        } catch (InterruptedException e) {
-//                            e.printStackTrace();
-//                        }
-                    }
+                    if (container == null)
+                        continue;
+
+                    CamMethod method = CommandList.getCommands()
+                            .get(container.getGroupName())
+                            .stream()
+                            .filter(m -> Objects.equals(m.getName(), container.getCommandName()))
+                            .findAny()
+                            .orElse(null);
+
+                    if (method == null)
+                        continue;
+
+                    Param[] params = method.getParams();
+                    List<Integer> console_params = container.getParams();
+
+                    for (int i = 0; i < params.length; i++)
+                        params[i].setVal(console_params.get(i));
+
+                    method.execute();
                 }
             }
         };

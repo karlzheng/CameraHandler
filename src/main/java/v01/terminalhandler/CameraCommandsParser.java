@@ -70,10 +70,10 @@ public class CameraCommandsParser {
                 .get().getCountOfParams();
     }
 
-    private List<String> getParameters(String[] command){
-        List<String> params = new ArrayList<>();
+    private List<Integer> getParameters(String[] command){
+        List<Integer> params = new ArrayList<>();
         for (int i = 2; i < command.length; i++){
-            params.add(command[i]);
+            params.add(new Integer(command[i]));
         }
         return params;
     }

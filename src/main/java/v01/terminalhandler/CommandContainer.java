@@ -9,9 +9,9 @@ public class CommandContainer {
 
     private String commandName;
 
-    private List<String> params;
+    private List<Integer> params;
 
-    public CommandContainer(String groupName, String commandName, List<String> params){
+    public CommandContainer(String groupName, String commandName, List<Integer> params){
         this.groupName = groupName;
         this.commandName = commandName;
         this.params = params;
@@ -33,11 +33,11 @@ public class CommandContainer {
         this.commandName = commandName;
     }
 
-    public List<String> getParams() {
+    public List<Integer> getParams() {
         return params;
     }
 
-    public void setParams(List<String> params) {
+    public void setParams(List<Integer> params) {
         this.params = params;
     }
 }
