@@ -11,6 +11,7 @@ public class CommandList {
     static {
         commands = new HashMap<>();
 
+        Param[] address = new Param[]{new Param("address", 0, 8)};
         Param[] delay = new Param[]{new Param("seconds",1,120)};
         Param[] empty = new Param[]{};
         Param[] focusData = new Param[]{new Param("focusData", 0, 100)};
@@ -32,6 +33,9 @@ public class CommandList {
         Param[] zoomSpeed = new Param[]{new Param("zoomSpeed", 2, 7)};
         Param[] zoomData = new Param[]{new Param("zoomData", 0, 100)};
 
+        List<CamMethod> addressSetList = Arrays.asList(
+                new CamMethod("setAddress", address, AddressSetCommand.class),
+                new CamMethod("ifClear", empty, AddressSetCommand.class));
         List<CamMethod> delayList = Collections.singletonList(
                 new CamMethod("delay", delay, DelayCommand.class));
         List<CamMethod> ataeList = Arrays.asList(
@@ -121,6 +125,7 @@ public class CommandList {
                 new CamMethod("wideWithSpeed", zoomSpeed, ZoomCommand.class),
                 new CamMethod("direct", zoomData, ZoomCommand.class));
 
+        commands.put("AddressSet", addressSetList);
         commands.put("Delay", delayList);
         commands.put("ATAE", ataeList);
         commands.put("ATAutoZoom", atAutoZoomList);

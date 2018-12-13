@@ -1,17 +1,14 @@
 package v01.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import v01.CamMethod;
 import v01.CommandList;
-import v01.Macro;
 import v01.Macros;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @Controller
 public class MacrosController {
@@ -53,11 +50,12 @@ public class MacrosController {
 
     @RequestMapping(value = "/executeMacro")
     public String runMacros(@RequestParam String macroName) {
-        Macros.getMacros()
-                .stream()
-                .filter(element -> element.getName().toLowerCase().equals(macroName.toLowerCase()))
-                .findAny()
-                .ifPresent(macro -> macro.getMethods().forEach(CamMethod::execute));
+        Macros.execute(macroName);
+//        Macros.getMacros()
+//                .stream()
+//                .filter(element -> element.getName().toLowerCase().equals(macroName.toLowerCase()))
+//                .findAny()
+//                .ifPresent(macro -> macro.getMethods().forEach(CamMethod::execute));
 
         return "redirect:/";
     }

@@ -20,22 +20,26 @@ public class Command {
 
         byte firstBit = (byte) (-128 + selectedCamera);
         byte lastBit = -1;
-        byte[] command = new byte[data.length+2]; // +2 for first & last bit
+        byte[] command = new byte[data.length+2]; // +2 for first & last byte
 
         command[0] = firstBit;
         command[command.length-1] = lastBit;
 
-        for(int i = 1; i < command.length-2; i++){
-            command[i] = data[i-1];
-        }
+        System.arraycopy(data, 0, command, 1, data.length);
 
         serialPort.writeBytes(command);
         // do sth with data
     }
 
     public static void setSelectedCamera(int selectedCamera) {
-        selectedCamera = selectedCamera;
+        Command.selectedCamera = selectedCamera;
     }
 
-    public static void setSerialPort(SerialPort serialPort){}
+    public static void setSerialPort(SerialPort serialPort){
+        Command.serialPort = serialPort;
+    }
+
+    public static SerialPort getSerialPort() {
+        return serialPort;
+    }
 }

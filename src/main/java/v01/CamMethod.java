@@ -1,5 +1,7 @@
 package v01;
 
+import jssc.SerialPortException;
+import v01.commands.Command;
 import v01.commands.GeneralCommand;
 
 import java.lang.reflect.InvocationTargetException;
@@ -35,8 +37,13 @@ public class CamMethod {
                 args_classes[i] = int.class;
 
             Object[] args = Stream.of(params).map(Param::getVal).toArray();
-            the_class.getDeclaredMethod(name, args_classes).invoke(the_class.newInstance(), args);
-        } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
+            Command command = (Command)the_class.getDeclaredMethod(name, args_classes)
+                    .invoke(the_class.newInstance(), args);
+            command.execute();
+
+            Thread.sleep(1000);
+        } catch (NoSuchMethodException | IllegalAccessException | InstantiationException |
+                InvocationTargetException | InterruptedException | SerialPortException e) {
             e.printStackTrace();
         }
     }
